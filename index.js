@@ -1,8 +1,4 @@
 import rules from './rules.js'
-import { colors } from './theme.js'
+import * as theme from './theme.js'
 
-export const presetDocs = () => ({
-  name: '@warp-ds/preset-docs',
-  rules,
-  theme: { colors }
-})
+export const presetDocs = () => ({ name: '@warp-ds/preset-docs', rules, theme })
