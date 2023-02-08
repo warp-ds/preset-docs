@@ -1,0 +1,26 @@
+lockfileVersion: 5.4
+
+specifiers:
+  '@warp-ds/uno': ^0.0.8
+
+devDependencies:
+  '@warp-ds/uno': 0.0.8
+
+packages:
+
+  /@unocss/core/0.49.4:
+    resolution: {integrity: sha512-1RNV+KBgRo0uuaa5Etwc5cfxkdhJelIXRFz3LeXBOU4dIrTzBAMr352M+oZ/nnkbnAROGf3icTE0UcmSaCA2RQ==}
+    dev: true
+
+  /@unocss/preset-mini/0.49.4:
+    resolution: {integrity: sha512-GsVKBRi2BbliEic7SfdY2AG03T+wEOd3yZOY+NtwEJ9Z/hwb1zRQHiizDuyth0E3FCHVfZkk9C0/WXy8Z1Qj3g==}
+    dependencies:
+      '@unocss/core': 0.49.4
+    dev: true
+
+  /@warp-ds/uno/0.0.8:
+    resolution: {integrity: sha512-FRjzUzC51QgCqcRYoJXr4nc+K/YfcnYMEEeLJarV3Rj3FFrvGyFx0/1ZbY65IO2o/Pf99MbicNCTwLYTkJ8LXQ==}
+    dependencies:
+      '@unocss/core': 0.49.4
+      '@unocss/preset-mini': 0.49.4
+    dev: true
