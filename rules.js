@@ -45,4 +45,10 @@ export default [
     const size = themed?.[0] ?? h.bracket.cssvar.global.rem(s)
     if (size != null) return { 'font-size': size }
   }],
+
+  [/^shadow(?:-(.+))?$/, ([, d], { theme }) => ({
+    '--un-shadow-inset': ' ',
+    'box-shadow': theme.shadow?.[d || 'DEFAULT']
+  })],
+  ['shadow-inset', { '--un-shadow-inset': 'inset' }],
 ];
