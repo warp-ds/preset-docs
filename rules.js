@@ -1,11 +1,13 @@
 import { colorResolver, handler as h, numberWithUnitRE, splitShorthand } from '@warp-ds/uno/utils';
 import { toArray } from '@unocss/core'
+import { borders } from './border-rules.js'
 
 function handleLineHeight(s, theme) {
   return theme.lineHeight?.[s] || h.bracket.cssvar.global.rem(s)
 }
 
 export default [
+  ...borders,
   [/^(?:color|c)-(.+)$/, colorResolver('color', 'text')],
   // auto detection and fallback to font-size if the content looks like a size
   [/^text-(.+)$/, colorResolver('color', 'text', css => !css.color?.toString().match(numberWithUnitRE))],

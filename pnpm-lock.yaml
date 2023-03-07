@@ -1,29 +1,34 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@unocss/core': ^0.49.4
-  '@warp-ds/uno': ^0.0.9
+  '@unocss/core': ^0.50.4
+  '@warp-ds/uno': ^0.0.15
 
 dependencies:
-  '@unocss/core': 0.49.4
+  '@unocss/core': 0.50.4
 
 devDependencies:
-  '@warp-ds/uno': 0.0.9
+  '@warp-ds/uno': 0.0.15
 
 packages:
 
-  /@unocss/core/0.49.4:
-    resolution: {integrity: sha512-1RNV+KBgRo0uuaa5Etwc5cfxkdhJelIXRFz3LeXBOU4dIrTzBAMr352M+oZ/nnkbnAROGf3icTE0UcmSaCA2RQ==}
-
-  /@unocss/preset-mini/0.49.4:
-    resolution: {integrity: sha512-GsVKBRi2BbliEic7SfdY2AG03T+wEOd3yZOY+NtwEJ9Z/hwb1zRQHiizDuyth0E3FCHVfZkk9C0/WXy8Z1Qj3g==}
-    dependencies:
-      '@unocss/core': 0.49.4
+  /@unocss/core/0.49.8:
+    resolution: {integrity: sha512-00BXRcMn6ERIkWHM64g6Uv6YZ3GUR8HjrMAzJZdd+04WcG2xCOyen8k+yDCxslqL0YsLqXYyLsgFSunHfYWy8w==}
     dev: true
 
-  /@warp-ds/uno/0.0.9:
-    resolution: {integrity: sha512-OqIvx5dbH+840jXQxy+9k7puN7xuIZA5cGr6cPIC+h+2r8XJbV3Nb1mYtKV7zXbmKCUMwDSJKxUXrhKylftH5A==}
+  /@unocss/core/0.50.4:
+    resolution: {integrity: sha512-k/8CdnO4w7f+QdvCpS3U5y6xApC4odiErkBKCCaGgBqOWkuTSL92TiBnffSEA2WepGm1+Mv4urIk20ocKYxbUQ==}
+    dev: false
+
+  /@unocss/preset-mini/0.49.8:
+    resolution: {integrity: sha512-iJEbunr8sPdvZkp/ncHL3853LobfMtn5l1yE+6MDr7kjiS9Teiopt+FkR2xSmv8nCcCp39gFT3mKtJ/sZVG61Q==}
     dependencies:
-      '@unocss/core': 0.49.4
-      '@unocss/preset-mini': 0.49.4
+      '@unocss/core': 0.49.8
+    dev: true
+
+  /@warp-ds/uno/0.0.15:
+    resolution: {integrity: sha512-zYzR08gl3KNr0lSMf8wfU9l1au1pfTWdLBC7s9O0H10IxP/cyiCYxYiAxfUik4lr2L/sdiL+eS6Dp0JIIdXQng==}
+    dependencies:
+      '@unocss/core': 0.49.8
+      '@unocss/preset-mini': 0.49.8
     dev: true
