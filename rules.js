@@ -49,7 +49,7 @@ export default [
   }],
 
   [/^shadow(?:-(.+))?$/, ([, d], { theme }) => ({
-    '--un-shadow-inset': ' ',
+    '--w-shadow-inset': ' ',
     'box-shadow': theme.shadow?.[d || 'DEFAULT']
   })],
   ['shadow-inset', { '--un-shadow-inset': 'inset' }],
