@@ -8,16 +8,16 @@ function handleLineHeight(s, theme) {
 
 export default [
   ...borders,
-  [/^(?:color|c)-(.+)$/, colorResolver('color', 'text')],
+  [/^pb-(?:color|c)-(.+)$/, colorResolver('color', 'text')],
   // auto detection and fallback to font-size if the content looks like a size
-  [/^text-(.+)$/, colorResolver('color', 'text', css => !css.color?.toString().match(numberWithUnitRE))],
-  [/^(?:text|color|c)-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-opacity': h.bracket.percent(opacity) })],
-  [/^bg-(.+)$/, colorResolver('background-color', 'bg')],
-  [/^bg-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-bg-opacity': h.bracket.percent(opacity) })],
-  [/^font-(.+)$/, ([, d], { theme }) => ({ 'font-family': theme.fontFamily?.[d] || h.bracket.cssvar.global(d) })],
-  [/^font-?([^-]+)$/, ([, s], { theme }) => ({ 'font-weight': theme.fontWeight?.[s] || h.global.number(s) })],
+  [/^pb-text-(.+)$/, colorResolver('color', 'text', css => !css.color?.toString().match(numberWithUnitRE))],
+  [/^pb-(?:text|color|c)-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-opacity': h.bracket.percent(opacity) })],
+  [/^pb-bg-(.+)$/, colorResolver('background-color', 'bg')],
+  [/^pb-bg-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-bg-opacity': h.bracket.percent(opacity) })],
+  [/^pb-font-(.+)$/, ([, d], { theme }) => ({ 'font-family': theme.fontFamily?.[d] || h.bracket.cssvar.global(d) })],
+  [/^pb-font-?([^-]+)$/, ([, s], { theme }) => ({ 'font-weight': theme.fontWeight?.[s] || h.global.number(s) })],
   [
-    /^text-(.+)$/,
+    /^pb-text-(.+)$/,
     ([, s = 'base'], { theme }) => {
       const [size, leading] = splitShorthand(s, 'length')
       const sizePairs = toArray(theme.fontSize?.[size])
@@ -42,15 +42,15 @@ export default [
       return { 'font-size': h.bracketOfLength.rem(s) }
     },
   ],
-  [/^text-size-(.+)$/, ([, s], { theme }) => {
+  [/^pb-text-size-(.+)$/, ([, s], { theme }) => {
     const themed = toArray(theme.fontSize?.[s])
     const size = themed?.[0] ?? h.bracket.cssvar.global.rem(s)
     if (size != null) return { 'font-size': size }
   }],
 
-  [/^shadow(?:-(.+))?$/, ([, d], { theme }) => ({
+  [/^pb-shadow(?:-(.+))?$/, ([, d], { theme }) => ({
     '--w-shadow-inset': ' ',
     'box-shadow': theme.shadow?.[d || 'DEFAULT']
   })],
-  ['shadow-inset', { '--un-shadow-inset': 'inset' }],
+  ['pb-shadow-inset', { '--un-shadow-inset': 'inset' }],
 ];
