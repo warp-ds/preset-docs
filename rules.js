@@ -8,16 +8,16 @@ function handleLineHeight(s, theme) {
 
 export default [
   ...borders,
-  [/^pb-(?:color|c)-(.+)$/, colorResolver('color', 'text')],
+  [/^pd-(?:color|c)-(.+)$/, colorResolver('color', 'text')],
   // auto detection and fallback to font-size if the content looks like a size
-  [/^pb-text-(.+)$/, colorResolver('color', 'text', css => !css.color?.toString().match(numberWithUnitRE))],
-  [/^pb-(?:text|color|c)-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-opacity': h.bracket.percent(opacity) })],
-  [/^pb-bg-(.+)$/, colorResolver('background-color', 'bg')],
-  [/^pb-bg-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-bg-opacity': h.bracket.percent(opacity) })],
-  [/^pb-font-(.+)$/, ([, d], { theme }) => ({ 'font-family': theme.fontFamily?.[d] || h.bracket.cssvar.global(d) })],
-  [/^pb-font-?([^-]+)$/, ([, s], { theme }) => ({ 'font-weight': theme.fontWeight?.[s] || h.global.number(s) })],
+  [/^pd-text-(.+)$/, colorResolver('color', 'text', css => !css.color?.toString().match(numberWithUnitRE))],
+  [/^pd-(?:text|color|c)-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-text-opacity': h.bracket.percent(opacity) })],
+  [/^pd-bg-(.+)$/, colorResolver('background-color', 'bg')],
+  [/^pd-bg-op(?:acity)?-?(.+)$/, ([, opacity]) => ({ '--un-bg-opacity': h.bracket.percent(opacity) })],
+  [/^pd-font-(.+)$/, ([, d], { theme }) => ({ 'font-family': theme.fontFamily?.[d] || h.bracket.cssvar.global(d) })],
+  [/^pd-font-?([^-]+)$/, ([, s], { theme }) => ({ 'font-weight': theme.fontWeight?.[s] || h.global.number(s) })],
   [
-    /^pb-text-(.+)$/,
+    /^pd-text-(.+)$/,
     ([, s = 'base'], { theme }) => {
       const [size, leading] = splitShorthand(s, 'length')
       const sizePairs = toArray(theme.fontSize?.[size])
@@ -42,15 +42,15 @@ export default [
       return { 'font-size': h.bracketOfLength.rem(s) }
     },
   ],
-  [/^pb-text-size-(.+)$/, ([, s], { theme }) => {
+  [/^pd-text-size-(.+)$/, ([, s], { theme }) => {
     const themed = toArray(theme.fontSize?.[s])
     const size = themed?.[0] ?? h.bracket.cssvar.global.rem(s)
     if (size != null) return { 'font-size': size }
   }],
 
-  [/^pb-shadow(?:-(.+))?$/, ([, d], { theme }) => ({
+  [/^pd-shadow(?:-(.+))?$/, ([, d], { theme }) => ({
     '--w-shadow-inset': ' ',
     'box-shadow': theme.shadow?.[d || 'DEFAULT']
   })],
-  ['pb-shadow-inset', { '--un-shadow-inset': 'inset' }],
+  ['pd-shadow-inset', { '--un-shadow-inset': 'inset' }],
 ];
