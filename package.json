@@ -1,6 +1,6 @@
 {
   "name": "@warp-ds/preset-docs",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "",
   "main": "index.js",
   "exports": "./index.js",
@@ -15,7 +15,7 @@
     "@warp-ds/uno": "*"
   },
   "devDependencies": {
-    "@warp-ds/uno": "^0.0.15"
+    "@warp-ds/uno": "^1.0.0-alpha.36"
   },
   "dependencies": {
     "@unocss/core": "^0.50.4"
