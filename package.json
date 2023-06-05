@@ -15,7 +15,7 @@
     "@warp-ds/uno": "*"
   },
   "devDependencies": {
-    "@warp-ds/uno": "^1.0.0-alpha.36"
+    "@warp-ds/uno": "^0.0.15"
   },
   "dependencies": {
     "@unocss/core": "^0.50.4"
